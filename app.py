@@ -9,11 +9,12 @@ from aws_cdk import core as cdk
 # being updated to use `cdk`.  You may delete this import if you don't need it.
 from aws_cdk import core
 
-from cdkpipeline_with_cfn_nag.cdkpipeline_with_cfn_nag_stack import CdkpipelineWithCfnNagStack
-
+from cdkpipeline.repository import RepositoryStack
+from s3bucket.bucket_stack import BucketStack
 
 app = core.App()
-CdkpipelineWithCfnNagStack(app, "CdkpipelineWithCfnNagStack",
+RepositoryStack(app, 'SourceRepository')
+BucketStack(app, "Bucket",
     # If you don't specify 'env', this stack will be environment-agnostic.
     # Account/Region-dependent features and context lookups will not work,
     # but a single synthesized template can be deployed anywhere.
