@@ -6,7 +6,7 @@ with open("README.md") as fp:
 
 
 setuptools.setup(
-    name="cdkpipeline_with_cfn_nag",
+    name="cdkpipeline",
     version="0.0.1",
 
     description="An empty CDK Python app",
@@ -15,11 +15,11 @@ setuptools.setup(
 
     author="author",
 
-    package_dir={"": "cdkpipeline_with_cfn_nag"},
-    packages=setuptools.find_packages(where="cdkpipeline_with_cfn_nag"),
+    package_dir={"": "cdkpipeline"},
+    packages=setuptools.find_packages(where="cdkpipeline"),
 
     install_requires=[
-        "aws-cdk.core==1.119.0",
+        "aws-cdk.core==1.121.0",
     ],
 
     python_requires=">=3.6",
