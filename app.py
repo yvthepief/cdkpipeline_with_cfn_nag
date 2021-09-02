@@ -10,11 +10,11 @@ from aws_cdk import core as cdk
 from aws_cdk import core
 
 from cdkpipeline.repository import RepositoryStack
-from s3bucket.bucket_stack import BucketStack
+from cdkpipeline.cdkpipeline import CdkPipelineStack
 
 app = core.App()
 RepositoryStack(app, 'SourceRepository')
-BucketStack(app, "Bucket",
+CdkPipelineStack(app, "CdkPipeline",
     # If you don't specify 'env', this stack will be environment-agnostic.
     # Account/Region-dependent features and context lookups will not work,
     # but a single synthesized template can be deployed anywhere.

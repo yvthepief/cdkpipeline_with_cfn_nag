@@ -52,10 +52,10 @@ class CdkPipelineStack(cdk.Stack):
             ),
         ),
 
-        # Creating DAAN Secure logging and scripts secure buckets
-        deployS3 = pipeline.add_application_stage(
+        # Deploy the S3 Bucket Stage
+        pipeline.add_application_stage(
             S3BucketStage(
-                self, 'TestAccount',
+                self, 'S3BucketStage',
                 removal_policy='RETAIN',
                 env=cdk.Environment(account="111111111111", region="eu-west-1")
             )
