@@ -40,7 +40,9 @@ class CdkPipelineStack(cdk.Stack):
                     "gem install cfn-nag",
                     "pip install -r requirements.txt",
                     "cdk synth",
-                    "for template in $(find ./cdk.out -type f -maxdepth 2 -name '*.template.json'); do cfn_nag_scan --input-path $template; done",
+                    "mkdir ./cfnnag_output",
+                    "for template in $(find ./cdk.out -type f -maxdepth 2 -name '*.template.json'); do cp $template ./cfnnag_output; done",
+                    "cfn_nag_scan --input-path $template",
                 ]
             )
         )
