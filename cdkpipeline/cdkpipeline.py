@@ -42,7 +42,7 @@ class CdkPipelineStack(cdk.Stack):
                     "cdk synth",
                     "mkdir ./cfnnag_output",
                     "for template in $(find ./cdk.out -type f -maxdepth 2 -name '*.template.json'); do cp $template ./cfnnag_output; done",
-                    "cfn_nag_scan --input-path $template",
+                    "cfn_nag_scan --input-path ./cfnnag_output",
                 ]
             )
         )
